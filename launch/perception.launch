@@ -1,0 +1,10 @@
+<launch>
+
+  <include file="$(find rplidar_ros)/launch/rplidar_s2.launch"/>
+  <include file="$(find zed_wrapper)/launch/zed2i.launch" />
+
+  <!-- <node name="voxel" pkg="object_localization" type="fusion.py"  output='screen'/> -->
+  <!-- <node name="detect" pkg="object_localization" type="label.py" output='screen'/> -->
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="-0.05 0.05 0 3.14 0 0 zed2i_base_link laser" />
+</launch>
